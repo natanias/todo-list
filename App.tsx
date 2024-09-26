@@ -1,23 +1,49 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { Tarefa } from "./src/components/Tarefa";
+import { KeyboardAvoidingView, Platform, StyleSheet, View } from "react-native";
+import Tarefa from "./src/components/Tarefa";
 import { MenuPrincipal } from "./src/components/MenuPrincipal";
 import { LogoBar } from "./src/components/LogoBar";
 import { InputTarefa } from "./src/components/InputTarefa";
+import React, { useState } from "react";
+import { Adicionar } from "./src/components/Adicionar/Butt";
+import { Tab } from "react-tabs";
 
 export default function App() {
+  const [status, setStatus] = useState(false);
+  const [show, setShow] = useState(false);
+
+  function handleCheck() {
+    setStatus(!status);
+  }
+  function handleNavigate() {
+    console.log("deveria navegar");
+  }
+  function handleShow() {
+    setShow(!show);
+  }
+
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
       <View style={styles.containerMain}>
         <LogoBar />
         <MenuPrincipal />
-        <Tarefa />
+        <Tarefa
+          title={"Tarefa teste"}
+          status={status}
+          show={show}
+          onCheckPress={handleCheck}
+          onShowPress={handleShow}
+          onTaskPress={handleNavigate}
+        />
         <StatusBar style="auto" />
       </View>
       <View style={styles.footer}>
         <InputTarefa />
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 

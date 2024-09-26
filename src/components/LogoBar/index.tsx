@@ -7,11 +7,11 @@ export function LogoBar() {
   return (
     <Container>
       <BotaoLogo>
-        <Foundation name="checkbox" size={26} color="white" />
+        <Foundation name="checkbox" size={35} color="white" />
       </BotaoLogo>
       <ContainerText>TASKSLIST</ContainerText>
       <BotaoMenu>
-        <Entypo name="menu" size={24} color="white" />
+        <Entypo name="menu" size={30} color="white" />
       </BotaoMenu>
     </Container>
   );

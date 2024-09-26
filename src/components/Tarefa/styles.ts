@@ -1,14 +1,16 @@
 import styled from "styled-components/native";
 import { Text } from "react-native";
 
+
+
 export const Container = styled.TouchableOpacity`
-  margin-top: 30px;
-  width: 90%;
-  height: 45.8px;
+  margin-top: 20px;
+  width: 95%;
+  height: 40px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #e5e1e1;
+  background-color: #ccc;
   border-radius: 5px;
   overflow: hidden;
 `;
@@ -26,6 +28,7 @@ export const TarefaFeita = styled.TouchableOpacity`
   margin-left: 14.75px;
   justify-content: center;
   align-items: center;
+  
 `;
 
 export const SetaTarefa = styled.TouchableOpacity`

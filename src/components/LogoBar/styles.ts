@@ -11,14 +11,15 @@ export const Container = styled.View`
 
 export const ContainerText = styled.Text`
   color: #fff;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   margin-right: 211px;
   margin-top: 30px;
+  margin-left: 10px;
 `;
 
-export const BotaoLogo = styled.TouchableOpacity`
-  margin-left: 14.75px;
+export const BotaoLogo = styled.View`
+  margin-left: 40px;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
@@ -27,7 +28,7 @@ export const BotaoLogo = styled.TouchableOpacity`
 export const BotaoMenu = styled.TouchableOpacity`
   width: 22.9px;
   height: 22.9px;
-  margin-right: 7.85px;
+  margin-right: 35px;
   justify-content: center;
   align-items: center;
   margin-top: 30px;

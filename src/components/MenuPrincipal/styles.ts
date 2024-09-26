@@ -20,19 +20,19 @@ export const BotaoTodas = styled.TouchableOpacity`
   height: 48px;
   justify-content: center;
   align-items: center;
-  //background-color: aliceblue;
+ 
 `;
 export const BotaoAbertas = styled.TouchableOpacity`
   width: 30%;
   height: 48px;
   justify-content: center;
   align-items: center;
-  //background-color: aliceblue;
+  
 `;
 export const BotaoFinalizadas = styled.TouchableOpacity`
   width: 40%;
   height: 48px;
   justify-content: center;
   align-items: center;
-  //background-color: aliceblue;
+  
 `;
