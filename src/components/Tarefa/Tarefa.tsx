@@ -3,7 +3,10 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { TouchableOpacity, View } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
-
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 type PropsTarefa = {
   title: string;
   show: boolean;
@@ -41,8 +44,8 @@ export function Tarefa({
         <View
           style={{
             backgroundColor: "#ccc",
-            height: 200,
-            width: 370,
+            height: hp("20%"),
+            width: wp("94%"),
             margin: 2,
           }}
         ></View>
