@@ -1,4 +1,6 @@
+
 import styled from "styled-components/native";
+
 
 
 export const InputButton = styled.TouchableOpacity`
@@ -9,4 +11,8 @@ export const InputButton = styled.TouchableOpacity`
   align-items: center;
   border-radius: 25px;
   margin: 2px
+  
+  
 `;
+
+

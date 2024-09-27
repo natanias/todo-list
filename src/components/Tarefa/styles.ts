@@ -3,7 +3,7 @@ import { Text } from "react-native";
 
 
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.View`
   margin-top: 20px;
   width: 95%;
   height: 40px;

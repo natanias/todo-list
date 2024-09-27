@@ -7,6 +7,11 @@ import { InputTarefa } from "./src/components/InputTarefa";
 import React, { useState } from "react";
 import { Adicionar } from "./src/components/Adicionar/Butt";
 import { Tab } from "react-tabs";
+import { BotSelc } from "./src/components/Adicionar/estilo";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function App() {
   const [status, setStatus] = useState(false);
@@ -59,6 +64,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   footer: {
-    marginBottom: 40,
+    alignSelf: "flex-end",
+    marginBottom: wp("5%"),
+    marginRight: wp("5%"),
   },
 });
