@@ -1,19 +1,11 @@
-import { StatusBar } from "expo-status-bar";
-import { KeyboardAvoidingView, Platform, StyleSheet, View } from "react-native";
-
-import React, { useState } from "react";
-
-import { Tab } from "react-tabs";
-
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import React from "react";
+import { View } from "react-native";
+import { CardTask } from "./src/CardTask/carde";
 
 export default function App() {
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-    ></KeyboardAvoidingView>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <CardTask taskTitle={""} taskDescription={""} taskTag={""} />
+    </View>
   );
 }
