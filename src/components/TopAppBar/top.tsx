@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: "#fff",
-    paddingHorizontal: 15,
-    height: 60,
+    paddingHorizontal: 10,
+    height: 42,
     marginTop: 30,
   },
   iconMenu: {
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
   },
   avatar: {
     flex: 1,
-    width: 40,
+    width: 10,
     height: 40,
-    borderRadius: 10,
+    borderRadius: 50,
   },
 });

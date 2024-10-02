@@ -1,15 +1,11 @@
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { View } from "react-native";
-import { CardTask } from "./src/CardTask/carde";
-import BarraPesquisa from "./src/BarraPesquisa/barra";
-import TopBar from "./src/TopAppBar/top";
+import Routes from "./src/routes";
 
 export default function App() {
   return (
-    <View style={{ alignItems: "center" }}>
-      <TopBar />
-      <BarraPesquisa />
-      <CardTask taskTitle={""} taskDescription={""} taskTag={""} />
-    </View>
+    <NavigationContainer>
+      <Routes />
+    </NavigationContainer>
   );
 }
