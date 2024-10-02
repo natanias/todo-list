@@ -14,9 +14,7 @@ export const ContainerCardTask = styled.View`
   align-items: center;
   padding: 10px; 
   background-color: #f5f5f5; 
-  border-radius: 15px; 
- 
-
+  border-radius: 16px;
   
 `;
 
@@ -45,11 +43,11 @@ export const TaskDescri = styled.Text`
 
 export const TaskTag = styled.TouchableOpacity`
   width: 25%; 
-  height: 25px; 
+  height: hp('20%'); 
   background-color: #006494;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 5px; 
   flex-direction: row; 
 `;
@@ -57,7 +55,7 @@ export const TaskTag = styled.TouchableOpacity`
 export const TextButton = styled.Text`
   color: #ffffff;
   font-size: 14px;
-  font-weight: 200;
+  font-weight: 500;
   margin-left: 5px; 
   align-items: center;
 `;

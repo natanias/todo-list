@@ -27,7 +27,7 @@ export function CardTask({ taskTitle, taskDescription, taskTag }: Props) {
       </TaskContainer>
       <TaskTag>
         <Feather name="folder" size={14} color="white" />
-        <TextButton> ok</TextButton>
+        <TextButton>Feito</TextButton>
       </TaskTag>
     </ContainerCardTask>
   );
