@@ -15,8 +15,8 @@ export default function App() {
       <BarraPesquisa />
 
       <View style={styles.info}>
-        <Spinner title={"Criadas"} />
-        <Spinner title={"Concluídas"} />
+        <Spinner title={"Criadas"} count={2} />
+        <Spinner title={"Concluídas"} count={2} />
       </View>
 
       <CardTask taskTitle={""} taskDescription={""} taskTag={""} />
@@ -29,8 +29,8 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 20,
+    marginBottom: 10,
 
-    marginLeft: 50,
+    marginLeft: 30,
   },
 });
