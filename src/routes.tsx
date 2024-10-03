@@ -8,12 +8,8 @@ import Tempo from "./pages/Tempo/telafoc";
 import { Entypo, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import FloatingActionButton from "./components/FloateButton/buttonflu";
 
-
 const Tab = createBottomTabNavigator();
 
-
-
- 
 export default function Routes() {
   const handleFabPress = () => {
     alert("Botão Pressionado!");
@@ -39,7 +35,7 @@ export default function Routes() {
       >
         {/* Tela Inicial */}
         <Tab.Screen
-          name="Inicial"
+          name="Inicil"
           component={Home}
           options={{
             tabBarIcon: ({ size, color }) => (
@@ -62,12 +58,10 @@ export default function Routes() {
         {/* Botão Flutuante */}
         <Tab.Screen
           name="ADD"
-          component={Home} 
+          component={Home}
           options={{
-            tabBarLabel: '',
-            tabBarIcon: () => (
-              <FloatingActionButton onPress={handleFabPress} />
-            ),
+            tabBarLabel: "",
+            tabBarIcon: () => <FloatingActionButton onPress={handleFabPress} />,
           }}
         />
 

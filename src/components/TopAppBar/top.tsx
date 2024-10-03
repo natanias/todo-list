@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingHorizontal: 10,
     height: 42,
-    marginTop: 30,
   },
   iconMenu: {
     flex: 1,

@@ -19,7 +19,6 @@ const FloatingButton = styled(TouchableOpacity)`
   align-items: center;
   justify-content: center;
   position: absolute;
-
 `;
 
 const FloatingActionButton = ({ onPress = FloatingButton }) => {
