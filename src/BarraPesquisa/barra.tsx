@@ -19,6 +19,7 @@ export default function BarraPesquisa() {
         value={search}
         onChangeText={handleSearch}
         placeholderTextColor="#E8F1F2"
+        keyboardType="default"
       />
     </View>
   );
