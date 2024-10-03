@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   tarefaContainer: {
     flex: 1,
     marginTop: 24,
-    marginHorizontal: 20,
+    marginHorizontal: 22,
   },
   tarefaCriada: {
     color: theme.cores.secundaria,
