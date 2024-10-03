@@ -28,7 +28,7 @@ export default function Routes() {
           tabBarStyle: {
             backgroundColor: "#13a8ec",
             height: 76,
-            borderTopEndRadius: 20,
+            borderTopEndRadius: 10,
             borderTopLeftRadius: 20,
           },
           tabBarLabelStyle: {
@@ -37,7 +37,7 @@ export default function Routes() {
           },
         }}
       >
-        {/* Tela Inicial */}
+  
         <Tab.Screen
           name="Inicial"
           component={Home}
@@ -48,7 +48,7 @@ export default function Routes() {
           }}
         />
 
-        {/* Tela de Calendário */}
+     
         <Tab.Screen
           name="Calendario"
           component={Calendario}
@@ -59,7 +59,7 @@ export default function Routes() {
           }}
         />
 
-        {/* Botão Flutuante */}
+ 
         <Tab.Screen
           name="ADD"
           component={Home} 
@@ -71,7 +71,7 @@ export default function Routes() {
           }}
         />
 
-        {/* Tela de Tempo */}
+
         <Tab.Screen
           name="Tempo"
           component={Tempo}
@@ -82,7 +82,6 @@ export default function Routes() {
           }}
         />
 
-        {/* Tela de Perfil */}
         <Tab.Screen
           name="Perfil"
           component={Perfil}
