@@ -6,11 +6,10 @@ import TopBar from "../../components/TopAppBar/top";
 
 export default function App() {
   return (
-    <View style={{ alignItems: "center" }}>
+    <View style={{ alignItems: "center", backgroundColor: "#E8F1F2" }}>
       <TopBar />
       <BarraPesquisa />
       <CardTask taskTitle={""} taskDescription={""} taskTag={""} />
     </View>
   );
 }
-
