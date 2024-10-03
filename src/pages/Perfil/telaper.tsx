@@ -12,7 +12,7 @@ export default function Perfil() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#E8F1F2",
     alignItems: "center",
     justifyContent: "center",
   },

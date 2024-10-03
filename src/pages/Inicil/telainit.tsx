@@ -8,7 +8,7 @@ import FloatingActionButton from "../../components/FloateButton/buttonflu";
 
 export default function App() {
   return (
-    <View style={{ alignItems: "center" }}>
+    <View style={{ alignItems: "center", backgroundColor: "#E8F1F2" }}>
       <TopBar />
       <BarraPesquisa />
       <CardTask taskTitle={""} taskDescription={""} taskTag={""} />
