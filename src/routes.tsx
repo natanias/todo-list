@@ -41,6 +41,7 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <Entypo name="home" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
 
@@ -52,6 +53,7 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <MaterialIcons name="calendar-today" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
 
@@ -62,6 +64,7 @@ export default function Routes() {
           options={{
             tabBarLabel: "",
             tabBarIcon: () => <FloatingActionButton onPress={handleFabPress} />,
+            headerShown: false,
           }}
         />
 
@@ -73,6 +76,7 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <FontAwesome name="clock-o" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
 
@@ -84,6 +88,7 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <FontAwesome name="user" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
       </Tab.Navigator>
