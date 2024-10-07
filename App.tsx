@@ -1,21 +1,15 @@
-import { NavigationContainer } from "@react-navigation/native";
-import React from "react";
-import Routes from "./src/routes";
-import Loading from "./src/components/Loading";
-import {
-  useFonts,
-  Roboto_400Regular,
-  Roboto_700Bold,
-} from "@expo-google-fonts/roboto";
+import React from 'react';
+import { StatusBar } from 'expo-status-bar';
+import HomeScreen from './src/screens/HomeScreen';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Roboto_400Regular,
-    Roboto_700Bold,
-  });
   return (
-    <NavigationContainer>
-      {fontsLoaded ? <Routes /> : <Loading />}
-    </NavigationContainer>
+    <>
+      <GestureHandlerRootView style={{flex:1}}>
+      <StatusBar style="auto" />
+      <HomeScreen/>
+      </GestureHandlerRootView>
+    </>
   );
 }

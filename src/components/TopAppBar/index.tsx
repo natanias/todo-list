@@ -1,20 +1,21 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Avatar, IconButton } from "react-native-paper";
-import { styles } from "./styles";
+import React from 'react';
+import { Container, Title, MenuButton, UserImage } from './style';
+import { Feather } from '@expo/vector-icons';
+import { Image } from 'react-native';
 
-export default function TopAppBar() {
-  return (
-    <View style={styles.headerContainer}>
-      <IconButton
-        size={20}
-        icon="filter-variant"
-        onPress={() => console.log("Pressed")}
-      />
+interface TopBarProps {
+    onMenuPress: () => void;
+    userImage: string; // URL ou caminho da imagem do usuário
+}
 
-      <Text style={styles.headerTitle}>MasterTask</Text>
-
-      <Avatar.Image size={45} source={require("../../assets/Natanzin.jpg")} />
-    </View>
-  );
+export function TopBar({ onMenuPress, userImage }: TopBarProps) {
+    return (
+        <Container>
+            <MenuButton onPress={onMenuPress}>
+                <Feather name="menu" size={24} color="#13293D" />
+            </MenuButton>
+            <Title>MasterTasks</Title>
+            <UserImage source={{ uri: userImage }} />
+        </Container>
+    );
 }
