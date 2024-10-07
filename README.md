@@ -1,10 +1,30 @@
-# Guia de Desenvolvimento: Trunk Based Development
-
 ### Introdução
+# Todo-list
+
+## Visão Geral
+
+O **Todo-list** é um aplicativo simples de gerenciamento de tarefas, desenvolvido para ajudar os usuários a organizar suas atividades diárias. Na primeira versão, os usuários podem criar novas tarefas e marcá-las como concluídas, promovendo uma melhor produtividade.
+
+## Interface no figma
+[Visite o Figma do Todo-list](https://www.figma.com/design/Qx9iykh1zjRzTGaS7RxBKJ/Todo-list?node-id=3-362&node-type=canvas&t=eydElXHkH5hbCkAm-0)
+
+
+## Funcionalidades
+
+- **Criar Tarefas**: Permite ao usuário adicionar novas tarefas com descrições.
+- **Marcar como Concluída**: O usuário pode marcar as tarefas como concluídas, facilitando o acompanhamento do progresso.
+- **Visualização de Tarefas**: Lista todas as tarefas criadas, com um indicador de status (concluída ou pendente).
+
+## Tecnologias Utilizadas
+
+- **Front-end**: React Native (com Expo)
+- **Gerenciamento de Estado**: Context API 
+- **Armazenamento Local**: AsyncStorage
+- **Interface de Usuário**: Styled Components
+
+### Estrutura do projeto
 
 Este repositório segue a metodologia Trunk Based Development (TBD), que promove a integração contínua e a entrega frequente de código. Todas as alterações devem ser pequenas, rapidamente integradas e revisadas, mantendo a branch principal (main) sempre pronta para produção.
-
-### Estrutura de Branches
 
 No Trunk Based Development, evitamos o uso de longas branches. Utilizamos:
 
