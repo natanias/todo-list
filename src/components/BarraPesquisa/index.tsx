@@ -13,7 +13,6 @@ type Props = {
 export default function BarraPesquisa({ onPress, onChangeText, value }: Props) {
   return (
     <View style={styles.container}>
-      {/* Ícone de pesquisa com toque para acionar o onPress */}
       <TouchableOpacity onPress={onPress}>
         <Feather name="search" size={24} color="white" style={styles.icon} />
       </TouchableOpacity>

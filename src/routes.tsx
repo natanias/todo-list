@@ -15,7 +15,7 @@ export default function Routes() {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleFabPress = () => {
-    // Abrir modal
+    
     setIsVisible(true);
   };
 
@@ -41,7 +41,6 @@ export default function Routes() {
           },
         }}
       >
-        {/* Tela Inicial */}
         <Tab.Screen
           name="Inicial"
           component={Home}
@@ -53,7 +52,7 @@ export default function Routes() {
           }}
         />
 
-        {/* Tela de Calendário */}
+        
         <Tab.Screen
           name="Calendario"
           component={Calendario}
@@ -65,10 +64,10 @@ export default function Routes() {
           }}
         />
 
-        {/* Botão Flutuante */}
+        
         <Tab.Screen
           name="ADD"
-          component={Home} // Certifique-se de que Home seja a tela correta para essa funcionalidade
+          component={Home} 
           options={{
             tabBarLabel: "",
             tabBarIcon: () => (
@@ -90,7 +89,7 @@ export default function Routes() {
           }}
         />
 
-        {/* Tela de Perfil */}
+     
         <Tab.Screen
           name="Perfil"
           component={Perfil}
@@ -103,7 +102,6 @@ export default function Routes() {
         />
       </Tab.Navigator>
 
-      {/* Modal para adicionar uma tarefa */}
       <BottonAdicionar isVisible={isVisible} onClose={handleCloseModal} />
 
       <StatusBar
