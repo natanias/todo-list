@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { StatusBar, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "./pages/Inicil/telainit";
+import Home from "./pages/Home/home";
 import Calendario from "./pages/Calendario/telacalend";
 import Perfil from "./pages/Perfil/telaper";
 import Tempo from "./pages/Tempo/telafoc";
 import { Entypo, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import FloatingActionButton from "./components/FloateButton/buttonflu";
+import { BottonAdicionar } from "./components/BottonAdicionar/adicionar";
 
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [cardtasks, setCardTasks] = useState<
+    { task: string; description: string; check: boolean }[]
+  >([]);
+
   const handleFabPress = () => {
-    alert("Botão Pressionado!");
+    setIsVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsVisible(false);
+  };
+
+  const handleAddTask = (newTask: { task: string; description: string }) => {
+    setCardTasks((prevTasks) => [...prevTasks, { ...newTask, check: false }]);
+    setIsVisible(false);
   };
 
   return (
@@ -33,19 +48,18 @@ export default function Routes() {
           },
         }}
       >
-        {/* Tela Inicial */}
         <Tab.Screen
           name="Inicial"
-          component={Home}
           options={{
             tabBarIcon: ({ size, color }) => (
               <Entypo name="home" size={size} color={color} />
             ),
             headerShown: false,
           }}
-        />
+        >
+          {() => <Home cardTasks={cardtasks} />}
+        </Tab.Screen>
 
-        {/* Tela de Calendário */}
         <Tab.Screen
           name="Calendario"
           component={Calendario}
@@ -57,9 +71,8 @@ export default function Routes() {
           }}
         />
 
-        {/* Botão Flutuante */}
         <Tab.Screen
-          name="ADD"
+          name="AddTask"
           component={Home}
           options={{
             tabBarLabel: "",
@@ -68,7 +81,6 @@ export default function Routes() {
           }}
         />
 
-        {/* Tela de Tempo */}
         <Tab.Screen
           name="Tempo"
           component={Tempo}
@@ -80,7 +92,6 @@ export default function Routes() {
           }}
         />
 
-        {/* Tela de Perfil */}
         <Tab.Screen
           name="Perfil"
           component={Perfil}
@@ -92,6 +103,13 @@ export default function Routes() {
           }}
         />
       </Tab.Navigator>
+
+      <BottonAdicionar
+        isVisible={isVisible}
+        onClose={handleCloseModal}
+        onSubmit={handleAddTask}
+      />
+
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"

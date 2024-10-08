@@ -2,27 +2,15 @@ import React from "react";
 import styled from "styled-components/native";
 import { TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { FloatingButtonContainer, FloatingButton } from "./style";
 
-const FloatingButtonContainer = styled.View`
-  position: absolute;
-  bottom: 10px;
-  width: 10px;
-  align-items: center;
-  justify-content: center;
-`;
+interface FloatingActionButtonProps {
+  onPress?: () => void;
+}
 
-const FloatingButton = styled(TouchableOpacity)`
-  background-color: #13293d;
-  width: 64px;
-  height: 64px;
-  border-radius: 50px;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-
-`;
-
-const FloatingActionButton = ({ onPress = FloatingButton }) => {
+const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
+  onPress,
+}) => {
   return (
     <FloatingButtonContainer>
       <FloatingButton onPress={onPress}>
