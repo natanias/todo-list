@@ -11,13 +11,7 @@ import {
   TextButton,
 } from "./estilo";
 
-type Props = {
-  taskTitle: string;
-  taskDescription: string;
-  taskTag: string;
-};
-
-export function CardTask({ taskTitle, taskDescription, taskTag }: Props) {
+export function CardTask() {
   return (
     <ContainerCardTask>
       <FontAwesome name="circle" size={14} color="black" />

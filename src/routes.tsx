@@ -1,18 +1,26 @@
-import React from "react";
-import { StatusBar, View } from "react-native";
+import React, { useState } from "react";
+import { StatusBar, View, Modal, TouchableOpacity } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "./pages/Inicil/telainit";
+import Home from "./pages/Home/home";
 import Calendario from "./pages/Calendario/telacalend";
 import Perfil from "./pages/Perfil/telaper";
 import Tempo from "./pages/Tempo/telafoc";
 import { Entypo, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import FloatingActionButton from "./components/FloateButton/buttonflu";
+import { BottonAdicionar } from "./components/BottonAdicionar/adicionar";
 
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
+  const [isVisible, setIsVisible] = useState(false);
+
   const handleFabPress = () => {
-    alert("Botão Pressionado!");
+    // Abrir modal
+    setIsVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsVisible(false);
   };
 
   return (
@@ -60,10 +68,12 @@ export default function Routes() {
         {/* Botão Flutuante */}
         <Tab.Screen
           name="ADD"
-          component={Home}
+          component={Home} // Certifique-se de que Home seja a tela correta para essa funcionalidade
           options={{
             tabBarLabel: "",
-            tabBarIcon: () => <FloatingActionButton onPress={handleFabPress} />,
+            tabBarIcon: () => (
+              <FloatingActionButton onPress={handleFabPress} />
+            ),
             headerShown: false,
           }}
         />
@@ -92,6 +102,10 @@ export default function Routes() {
           }}
         />
       </Tab.Navigator>
+
+      {/* Modal para adicionar uma tarefa */}
+      <BottonAdicionar isVisible={isVisible} onClose={handleCloseModal} />
+
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
