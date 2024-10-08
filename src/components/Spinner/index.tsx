@@ -3,7 +3,7 @@ import React from "react";
 import { styles } from "./styles";
 
 type Props = {
-  title: string; // O título deve ser uma string
+  title: string; 
   count: number;
 };
 export default function Spinner({ title, count }: Props) {

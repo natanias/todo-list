@@ -9,11 +9,14 @@ export const theme = {
     preto: "#000000",
     degrade: "#D9D9D9",
   },
-  tamanho: {
-    xs: 12,
-    sm: 13,
-    md: 18,
-    lg: 20,
-    xl: 32,
+  fonte_size: {
+    corpo: 12,
+    subtitulo: 18,
+    titulo: 20,
+    large: 32,
+  },
+  font_family: {
+    regular: "Roboto_400Regular",
+    bold: "Roboto_700Bold",
   },
 };

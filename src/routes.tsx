@@ -1,18 +1,26 @@
-import React from "react";
-import { StatusBar, View } from "react-native";
+import React, { useState } from "react";
+import { StatusBar, View, Modal, TouchableOpacity } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "./pages/Inicil/telainit";
+import Home from "./pages/Home/home";
 import Calendario from "./pages/Calendario/telacalend";
 import Perfil from "./pages/Perfil/telaper";
 import Tempo from "./pages/Tempo/telafoc";
 import { Entypo, MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import FloatingActionButton from "./components/FloateButton/buttonflu";
+import { BottonAdicionar } from "./components/BottonAdicionar/adicionar";
 
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
+  const [isVisible, setIsVisible] = useState(false);
+
   const handleFabPress = () => {
-    alert("Botão Pressionado!");
+    
+    setIsVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsVisible(false);
   };
 
   return (
@@ -33,7 +41,6 @@ export default function Routes() {
           },
         }}
       >
-        {/* Tela Inicial */}
         <Tab.Screen
           name="Inicial"
           component={Home}
@@ -41,10 +48,11 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <Entypo name="home" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
 
-        {/* Tela de Calendário */}
+        
         <Tab.Screen
           name="Calendario"
           component={Calendario}
@@ -52,16 +60,20 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <MaterialIcons name="calendar-today" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
 
-        {/* Botão Flutuante */}
+        
         <Tab.Screen
           name="ADD"
-          component={Home}
+          component={Home} 
           options={{
             tabBarLabel: "",
-            tabBarIcon: () => <FloatingActionButton onPress={handleFabPress} />,
+            tabBarIcon: () => (
+              <FloatingActionButton onPress={handleFabPress} />
+            ),
+            headerShown: false,
           }}
         />
 
@@ -73,10 +85,11 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <FontAwesome name="clock-o" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
 
-        {/* Tela de Perfil */}
+     
         <Tab.Screen
           name="Perfil"
           component={Perfil}
@@ -84,9 +97,13 @@ export default function Routes() {
             tabBarIcon: ({ size, color }) => (
               <FontAwesome name="user" size={size} color={color} />
             ),
+            headerShown: false,
           }}
         />
       </Tab.Navigator>
+
+      <BottonAdicionar isVisible={isVisible} onClose={handleCloseModal} />
+
       <StatusBar
         barStyle="light-content"
         backgroundColor="transparent"
