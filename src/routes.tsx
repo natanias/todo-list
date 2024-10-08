@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StatusBar, View, Modal, TouchableOpacity } from "react-native";
+import { StatusBar, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./pages/Home/home";
 import Calendario from "./pages/Calendario/telacalend";
@@ -13,13 +13,20 @@ const Tab = createBottomTabNavigator();
 
 export default function Routes() {
   const [isVisible, setIsVisible] = useState(false);
+  const [cardtasks, setCardTasks] = useState<
+    { task: string; description: string; check: boolean }[]
+  >([]);
 
   const handleFabPress = () => {
-    
     setIsVisible(true);
   };
 
   const handleCloseModal = () => {
+    setIsVisible(false);
+  };
+
+  const handleAddTask = (newTask: { task: string; description: string }) => {
+    setCardTasks((prevTasks) => [...prevTasks, { ...newTask, check: false }]);
     setIsVisible(false);
   };
 
@@ -43,16 +50,16 @@ export default function Routes() {
       >
         <Tab.Screen
           name="Inicial"
-          component={Home}
           options={{
             tabBarIcon: ({ size, color }) => (
               <Entypo name="home" size={size} color={color} />
             ),
             headerShown: false,
           }}
-        />
+        >
+          {() => <Home cardTasks={cardtasks} />}
+        </Tab.Screen>
 
-        
         <Tab.Screen
           name="Calendario"
           component={Calendario}
@@ -64,20 +71,16 @@ export default function Routes() {
           }}
         />
 
-        
         <Tab.Screen
-          name="ADD"
-          component={Home} 
+          name="AddTask"
+          component={Home}
           options={{
             tabBarLabel: "",
-            tabBarIcon: () => (
-              <FloatingActionButton onPress={handleFabPress} />
-            ),
+            tabBarIcon: () => <FloatingActionButton onPress={handleFabPress} />,
             headerShown: false,
           }}
         />
 
-        {/* Tela de Tempo */}
         <Tab.Screen
           name="Tempo"
           component={Tempo}
@@ -89,7 +92,6 @@ export default function Routes() {
           }}
         />
 
-     
         <Tab.Screen
           name="Perfil"
           component={Perfil}
@@ -102,7 +104,11 @@ export default function Routes() {
         />
       </Tab.Navigator>
 
-      <BottonAdicionar isVisible={isVisible} onClose={handleCloseModal} />
+      <BottonAdicionar
+        isVisible={isVisible}
+        onClose={handleCloseModal}
+        onSubmit={handleAddTask}
+      />
 
       <StatusBar
         barStyle="light-content"

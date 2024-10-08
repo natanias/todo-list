@@ -10,10 +10,10 @@ type Props = {
   value: string;
 };
 
-export default function BarraPesquisa({ onPress, onChangeText, value }: Props) {
+export default function BarraPesquisa({ onChangeText, value }: Props) {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={onPress}>
+      <TouchableOpacity>
         <Feather name="search" size={24} color="white" style={styles.icon} />
       </TouchableOpacity>
 
@@ -21,7 +21,7 @@ export default function BarraPesquisa({ onPress, onChangeText, value }: Props) {
         style={styles.input}
         placeholder="Buscar pela sua tarefa"
         value={value}
-        onChangeText={onChangeText}
+        onChangeText={onChangeText} 
         placeholderTextColor={theme.cores.neutro}
         keyboardType="default"
       />

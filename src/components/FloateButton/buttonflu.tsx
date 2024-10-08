@@ -4,12 +4,13 @@ import { TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { FloatingButtonContainer, FloatingButton } from "./style";
 
-
 interface FloatingActionButtonProps {
-  onPress?: () => void; // Definindo o tipo da prop onPress como uma função que retorna void
+  onPress?: () => void;
 }
 
-const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({ onPress }) => {
+const FloatingActionButton: React.FC<FloatingActionButtonProps> = ({
+  onPress,
+}) => {
   return (
     <FloatingButtonContainer>
       <FloatingButton onPress={onPress}>

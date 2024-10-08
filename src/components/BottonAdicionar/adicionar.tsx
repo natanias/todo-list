@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, TouchableOpacity } from "react-native";
+import { Modal } from "react-native";
 import {
   AddButton,
   ButtonRow,
@@ -11,20 +11,22 @@ import {
   Title,
 } from "./style";
 
-
 interface BottonAdicionarProps {
   isVisible: boolean;
   onClose: () => void;
+  onSubmit: (task: { task: string; description: string }) => void;
 }
 
-export const BottonAdicionar: React.FC<BottonAdicionarProps> = ({ isVisible, onClose }) => {
+export const BottonAdicionar: React.FC<BottonAdicionarProps> = ({ isVisible, onClose, onSubmit }) => {
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
 
   const handleSubmit = () => {
     if (task && description) {
-      console.log({ task, description });
+      onSubmit({ task, description });
       handleCancel();
+    } else {
+      console.log("Preencha o título e a descrição");
     }
   };
 
@@ -42,14 +44,12 @@ export const BottonAdicionar: React.FC<BottonAdicionarProps> = ({ isVisible, onC
           <Input
             placeholder="Tarefa"
             value={task}
-            onChangeText={(text: React.SetStateAction<string>) => setTask(text)}
+            onChangeText={(text: string) => setTask(text)} 
           />
           <Input
             placeholder="Descrição"
             value={description}
-            onChangeText={(text: React.SetStateAction<string>) =>
-              setDescription(text)
-            }
+            onChangeText={(text: string) => setDescription(text)} 
           />
           <ButtonRow>
             <CancelButton onPress={handleCancel}>
