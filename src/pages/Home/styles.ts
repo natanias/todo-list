@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
     width: '80%',
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     paddingHorizontal: 10,
-    marginBottom: 15, 
+    marginBottom: 15,
   },
   modalButtons: {
     flexDirection: 'row',
@@ -53,4 +53,5 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
   },
+
 });

@@ -31,7 +31,7 @@ const CardTask: React.FC<CardTaskProps> = ({ task, description, check, onToggleC
 
       
       <TouchableOpacity style={styles.tagContainer} onPress={onTagPress}>
-        <Feather name="clipboard" size={17} color="#fff" /> 
+        <Feather name="chevron-down" size={20} color="#fff" /> 
       </TouchableOpacity>
     </View>
   );

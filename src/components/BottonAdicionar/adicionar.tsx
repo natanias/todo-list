@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal } from "react-native";
+import { Modal, Alert } from "react-native";
 import {
   AddButton,
   ButtonRow,
@@ -10,23 +10,28 @@ import {
   ModalContainer,
   Title,
 } from "./style";
+import { useTasks } from "../../components/TaskContext";
 
-interface BottonAdicionarProps {
-  isVisible: boolean;
-  onClose: () => void;
-  onSubmit: (task: { task: string; description: string }) => void;
-}
-
-export const BottonAdicionar: React.FC<BottonAdicionarProps> = ({ isVisible, onClose, onSubmit }) => {
+export const BottonAdicionar: React.FC<BottonAdicionarProps> = ({
+  isVisible,
+  onClose,
+}) => {
   const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
+  const { addTask } = useTasks();
 
   const handleSubmit = () => {
-    if (task && description) {
-      onSubmit({ task, description });
-      handleCancel();
+    if (!task || !description) {
+      Alert.alert("Erro", "Preencha o título e a descrição");
+      return;
+    }
+
+    const success = addTask({ task, description, check: false });
+
+    if (!success) {
+      Alert.alert("Erro", "Já existe uma tarefa com esse título.");
     } else {
-      console.log("Preencha o título e a descrição");
+      handleCancel();
     }
   };
 
@@ -44,12 +49,12 @@ export const BottonAdicionar: React.FC<BottonAdicionarProps> = ({ isVisible, onC
           <Input
             placeholder="Tarefa"
             value={task}
-            onChangeText={(text: string) => setTask(text)} 
+            onChangeText={(text: string) => setTask(text)}
           />
           <Input
             placeholder="Descrição"
             value={description}
-            onChangeText={(text: string) => setDescription(text)} 
+            onChangeText={(text: string) => setDescription(text)}
           />
           <ButtonRow>
             <CancelButton onPress={handleCancel}>

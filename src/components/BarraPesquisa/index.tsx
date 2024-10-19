@@ -3,14 +3,11 @@ import { View, TextInput, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { styles } from "./styles";
 import { theme } from "../../theme/index";
+import { useTasks } from "..//TaskContext";
 
-type Props = {
-  onPress: () => void;
-  onChangeText: (text: string) => void;
-  value: string;
-};
+export default function BarraPesquisa() {
+  const { searchTerm, setSearchTerm } = useTasks(); 
 
-export default function BarraPesquisa({ onChangeText, value }: Props) {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -20,8 +17,8 @@ export default function BarraPesquisa({ onChangeText, value }: Props) {
       <TextInput
         style={styles.input}
         placeholder="Buscar pela sua tarefa"
-        value={value}
-        onChangeText={onChangeText} 
+        value={searchTerm}  
+        onChangeText={setSearchTerm}  
         placeholderTextColor={theme.cores.neutro}
         keyboardType="default"
       />
